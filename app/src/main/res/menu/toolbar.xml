@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--showAsAction指定了按钮的显示位置。
+        always表示永远显示在Toolbar中，如果屏幕空间不够则不显示；
+        ifRoom表示屏幕空间足够的情况下显示在Toolbar中，如果屏幕空间不够则显示在菜单中；
+        never则表示永远显示在菜单中。
+     -->
+    <item
+        android:id="@+id/backup"
+        android:icon="@drawable/ic_backup"
+        android:title="Backup"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/ic_settings"
+        android:title="Setting"
+        app:showAsAction="never" />
+</menu>

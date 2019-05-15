@@ -1,0 +1,15 @@
+<resources>
+    <!-- Base application theme. -->
+    <!-- NoActionBar表示不使用系统默认的标题栏，因为我们采用功能更丰富的ToolBar -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- colorPrimary是标题栏的底色,colorPrimaryDark是手机状态栏的底色，colorAccent是悬浮按键的底色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="foodActivityTheme" parent="AppTheme">
+    </style>
+
+</resources>

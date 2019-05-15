@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sbw.atrue.Order">
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/fengmian"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 将登录活动设置为程序的主活动和启动项 -->
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 定义了使用ToolBar控件的布局的标题为food -->
+        <activity
+            android:name=".Activity.OrderActivity"
+            android:label="潮汕牛肉"></activity>
+        <activity
+            android:name=".Activity.FoodActivity"
+            android:theme="@style/foodActivityTheme">
+        </activity>
+
+        <!--声明其他各项活动-->
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.ShoppingActivity" />
+        <activity android:name=".Activity.InputActivity" />
+        <activity android:name=".Activity.SuccessActivity" />
+        <activity android:name=".Activity.ReadOrderActivity" />
+        <activity android:name=".Activity.MyMoneyActivity" />
+        <activity android:name=".Activity.SettingActivity" />
+
+    </application>
+</manifest>

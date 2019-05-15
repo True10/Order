@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--DrawerLayout是滑动菜单控件，与QQ名片一致-->
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--CoordinatorLayout布局能监控子控件的各种事件。此处用来自动调整悬浮按钮的位置，避免被SnackBar提示控件遮挡-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--引入AppBarLayout控件的作用是避免CoordinatorLayout布局直接遮挡ToolBar控件-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Toolbar是功能丰富的高级标题栏，此处用于取代系统默认的ActionBar标题栏-->
+            <!--最后一行的配置可以让标题栏在用户下拉浏览菜单的时候自动实现消失与浮现-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_scrollFlags="scroll|enterAlways|snap" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--SwipeRefreshLayout是用于实现下拉刷新功能的核心类，将所有想要实现下拉刷新的控件放置其中即可-->
+        <!--下面第五行指定了一个布局行为，其作用同样是避免CoordinatorLayout布局直接遮挡ToolBar控件-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!--设置悬浮按钮，用于显示购物车-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/shop" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--导入滑动菜单布局，注意其中引入了另外两个XML文件nav_header和nav_menu-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

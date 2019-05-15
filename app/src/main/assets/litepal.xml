@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="order" ></dbname>
+    <version value="8" ></version>
+    <list>
+        <mapping class="com.sbw.atrue.Order.Entity.ProductOrder"></mapping>
+        <mapping class="com.sbw.atrue.Order.Entity.Order"></mapping>
+    </list>
+</litepal>
